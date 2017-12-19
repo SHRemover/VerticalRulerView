@@ -8,11 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM (NSInteger, STClockWiseType) {
-    STClockWiseYes,
-    STClockWiseNo
-};
-
 @interface STLoopProgressView : UIView
 
 @property (assign, nonatomic) CGFloat persentage;

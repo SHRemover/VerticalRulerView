@@ -7,13 +7,17 @@
 //
 
 #import "STLoopProgressView.h"
-#import "STLoopProgressView+BaseConfiguration.h"
 
 #define SELF_WIDTH CGRectGetWidth(self.bounds)
 #define SELF_HEIGHT CGRectGetHeight(self.bounds)
 
 @interface STLoopProgressView ()
-
+{
+    UIColor *startColor;
+    UIColor *endColor;
+    CGFloat initPersentage;
+    CGFloat lineWidth;
+}
 @property (strong, nonatomic) CAShapeLayer *colorMaskLayer; // 渐变色遮罩
 @property (strong, nonatomic) CAShapeLayer *colorLayer; // 渐变色
 @property (strong, nonatomic) CAShapeLayer *blueMaskLayer; // 蓝色背景遮罩
@@ -22,16 +26,27 @@
 
 @implementation STLoopProgressView
 
-- (void)awakeFromNib {
-    
-    [super awakeFromNib];
-    
-    self.backgroundColor = [STLoopProgressView backgroundColor];
-    
-    [self setupBlueMaskLayer];
-    [self setupColorLayer];
-    [self setupColorMaskLayer];
+- (void)defaultValue {
+    self.backgroundColor = [UIColor darkGrayColor];
+    startColor = [UIColor orangeColor];
+    endColor = [UIColor redColor];
+    initPersentage = 0.5;
+    lineWidth = 10;
 }
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        
+        [self defaultValue];
+        [self setupBlueMaskLayer];
+        [self setupColorLayer];
+        [self setupColorMaskLayer];
+    }
+    return self;
+}
+
 
 /**
  *  设置整个蓝色view的遮罩
@@ -44,7 +59,7 @@
 }
 
 /**
- *  设置渐变色，渐变色由左右两个部分组成，左边部分由黄到绿，右边部分由黄到红
+ *  设置渐变色
  */
 - (void)setupColorLayer {
     
@@ -52,12 +67,12 @@
     self.colorLayer.frame = self.bounds;
     [self.layer addSublayer:self.colorLayer];
 
-    CAGradientLayer *leftLayer = [CAGradientLayer layer];
-    leftLayer.frame = CGRectMake(0, 0, SELF_WIDTH, SELF_HEIGHT);
+    CAGradientLayer *layer = [CAGradientLayer layer];
+    layer.frame = CGRectMake(0, 0, SELF_WIDTH, SELF_HEIGHT);
     // 分段设置渐变色
-    leftLayer.locations = @[@0.0, @1.0];
-    leftLayer.colors = @[(id)[STLoopProgressView endColor].CGColor, (id)[STLoopProgressView startColor].CGColor];
-    [self.colorLayer addSublayer:leftLayer];
+    layer.locations = @[@0.0, @1.0];
+    layer.colors = @[(id)endColor.CGColor, (id)startColor.CGColor];
+    [self.colorLayer addSublayer:layer];
 }
 
 /**
@@ -66,16 +81,15 @@
 - (void)setupColorMaskLayer {
     
     CAShapeLayer *layer = [self generateMaskLayer];
-    layer.lineWidth = [STLoopProgressView lineWidth] + 0.5; // 渐变遮罩线宽较大，防止蓝色遮罩有边露出来
+    layer.lineWidth = lineWidth + 0.5; // 渐变遮罩线宽较大，防止蓝色遮罩有边露出来
     self.colorLayer.mask = layer;
     self.colorMaskLayer = layer;
+    self.colorMaskLayer.strokeEnd = initPersentage;
 }
 
 /**
- *  生成一个圆环形的遮罩层
+ *  生成一个遮罩层
  *  因为蓝色遮罩与渐变遮罩的配置都相同，所以封装出来
- *
- *  @return 环形遮罩
  */
 - (CAShapeLayer *)generateMaskLayer {
     
@@ -85,15 +99,15 @@
     // 线的路径
     UIBezierPath *linePath = [UIBezierPath bezierPath];
     // 起点
-    [linePath moveToPoint:CGPointMake(140, 300)];
+    [linePath moveToPoint:CGPointMake(self.frame.size.height/2, self.frame.size.height)];
     // 其他点
-    [linePath addLineToPoint:CGPointMake(140, 0)];
+    [linePath addLineToPoint:CGPointMake(self.frame.size.height/2, 0)];
     
-    layer.lineWidth = [STLoopProgressView lineWidth];
+    layer.lineWidth = lineWidth;
     layer.path = linePath.CGPath;
     layer.fillColor = [UIColor clearColor].CGColor; // 填充色为透明（不设置为黑色）
     layer.strokeColor = [UIColor blackColor].CGColor; // 随便设置一个边框颜色
-    layer.lineCap = kCALineCapRound; // 设置线为圆角
+    
     return layer;
 }
 
@@ -103,9 +117,8 @@
  *  @param persentage 百分比
  */
 - (void)setPersentage:(CGFloat)persentage {
-    
-    _persentage = persentage;
     self.colorMaskLayer.strokeEnd = persentage;
+    [self.colorMaskLayer removeAllAnimations];
 }
 
 @end

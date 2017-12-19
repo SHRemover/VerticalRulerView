@@ -13,6 +13,8 @@
 		443D61D51FE7A07B003CFE1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 443D61D41FE7A07B003CFE1D /* Assets.xcassets */; };
 		443D61D81FE7A07B003CFE1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 443D61D61FE7A07B003CFE1D /* LaunchScreen.storyboard */; };
 		443D61DB1FE7A07B003CFE1D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 443D61DA1FE7A07B003CFE1D /* main.m */; };
+		4492FB841FE8B0650019738E /* STLoopProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4492FB811FE8B0650019738E /* STLoopProgressView.m */; };
+		4492FB851FE8B0650019738E /* VerticalRuler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4492FB831FE8B0650019738E /* VerticalRuler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		443D61D71FE7A07B003CFE1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		443D61D91FE7A07B003CFE1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		443D61DA1FE7A07B003CFE1D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4492FB801FE8B0650019738E /* STLoopProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STLoopProgressView.h; sourceTree = "<group>"; };
+		4492FB811FE8B0650019738E /* STLoopProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STLoopProgressView.m; sourceTree = "<group>"; };
+		4492FB821FE8B0650019738E /* VerticalRuler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalRuler.h; sourceTree = "<group>"; };
+		4492FB831FE8B0650019738E /* VerticalRuler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalRuler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 		443D61CA1FE7A07B003CFE1D /* RulerDemo */ = {
 			isa = PBXGroup;
 			children = (
+				4492FB7F1FE8B0650019738E /* VerticalRulerView */,
 				443D61CB1FE7A07B003CFE1D /* AppDelegate.h */,
 				443D61CC1FE7A07B003CFE1D /* AppDelegate.m */,
 				443D61CE1FE7A07B003CFE1D /* ViewController.h */,
@@ -69,6 +76,17 @@
 				443D61DA1FE7A07B003CFE1D /* main.m */,
 			);
 			path = RulerDemo;
+			sourceTree = "<group>";
+		};
+		4492FB7F1FE8B0650019738E /* VerticalRulerView */ = {
+			isa = PBXGroup;
+			children = (
+				4492FB801FE8B0650019738E /* STLoopProgressView.h */,
+				4492FB811FE8B0650019738E /* STLoopProgressView.m */,
+				4492FB821FE8B0650019738E /* VerticalRuler.h */,
+				4492FB831FE8B0650019738E /* VerticalRuler.m */,
+			);
+			path = VerticalRulerView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,9 +160,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4492FB841FE8B0650019738E /* STLoopProgressView.m in Sources */,
 				443D61D01FE7A07B003CFE1D /* ViewController.m in Sources */,
 				443D61DB1FE7A07B003CFE1D /* main.m in Sources */,
 				443D61CD1FE7A07B003CFE1D /* AppDelegate.m in Sources */,
+				4492FB851FE8B0650019738E /* VerticalRuler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

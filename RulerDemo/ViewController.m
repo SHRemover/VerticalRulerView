@@ -8,17 +8,27 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+#import "VerticalRuler.h"
 
-@end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    VerticalRuler *ruler = [[VerticalRuler alloc] initWithFrame:(CGRectMake(50, 100, 200, 200))];
+    ruler.valueChanged = ^(CGFloat value, CGFloat persentageValue) {
+        NSLog(@"value:%f == persentageValue:%f", value, persentageValue);
+    };
+    
+    [self.view addSubview:ruler];
 }
 
+- (void)addProgressView{
+    
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

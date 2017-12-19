@@ -10,4 +10,6 @@
 
 @interface VerticalRuler : UIView
 
+@property (nonatomic, copy) void (^valueChanged)(CGFloat value, CGFloat persentageValue);
+
 @end
