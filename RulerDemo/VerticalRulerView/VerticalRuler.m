@@ -37,7 +37,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor cyanColor];
+//        self.backgroundColor = [UIColor cyanColor];
         [self defaultValue];
         [self configWithFrame:frame];
     }
@@ -57,9 +57,9 @@
     self.slider = [[UISlider alloc] initWithFrame:CGRectMake(x, y, frame.size.height, lineWidth)];
     
     //设置滑块图标图片
-    [_slider setThumbImage:[UIImage imageNamed:@"btn"] forState:UIControlStateNormal];
+    [_slider setThumbImage:[UIImage imageNamed:@"rulerBtn"] forState:UIControlStateNormal];
     //设置点击滑块状态图标
-    [_slider setThumbImage:[UIImage imageNamed:@"btn"] forState:UIControlStateHighlighted];
+    [_slider setThumbImage:[UIImage imageNamed:@"rulerBtn"] forState:UIControlStateHighlighted];
     
     //设置背景颜色
     [_slider setMinimumTrackTintColor:[UIColor clearColor]];
@@ -79,16 +79,40 @@
     
     //设置委托事件
     [_slider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
+    [_slider addTarget:self action:@selector(sliderTouchUpInside:) forControlEvents:UIControlEventTouchUpInside];
     
     //添加到VIEW
     [self addSubview:_slider];
 }
 
-- (void)sliderValueChanged:(UISlider *)sender {
-    CGFloat persentageValue = (sender.value - sender.minimumValue)/(sender.maximumValue - sender.minimumValue);
+- (void)setRulerMinValue:(CGFloat)rulerMinValue {
+    _slider.minimumValue = rulerMinValue;
+}
+
+- (void)setRulerMaxValue:(CGFloat)rulerMaxValue {
+    _slider.maximumValue = rulerMaxValue;
+}
+
+- (void)setRulerInitValue:(CGFloat)rulerInitValue {
+    _slider.value = rulerInitValue;
+    
+    CGFloat persentageValue = (_slider.value - _slider.minimumValue)/(_slider.maximumValue - _slider.minimumValue);
+    _loopProgressView.persentage = persentageValue;
+}
+
+
+- (void)sliderValueChanged:(UISlider *)slider {
+    CGFloat persentageValue = (slider.value - slider.minimumValue)/(slider.maximumValue - slider.minimumValue);
     _loopProgressView.persentage = persentageValue;
     if (self.valueChanged) {
-        self.valueChanged(sender.value, persentageValue);
+        self.valueChanged(slider.value, persentageValue);
+    }
+}
+
+- (void)sliderTouchUpInside:(UISlider *)slider {
+    CGFloat persentageValue = (slider.value - slider.minimumValue)/(slider.maximumValue - slider.minimumValue);
+    if (self.touchUpInside) {
+        self.touchUpInside(slider.value, persentageValue);
     }
 }
 
