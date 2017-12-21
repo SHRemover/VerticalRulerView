@@ -99,9 +99,9 @@
     // 线的路径
     UIBezierPath *linePath = [UIBezierPath bezierPath];
     // 起点
-    [linePath moveToPoint:CGPointMake(self.frame.size.height/2, self.frame.size.height)];
+    [linePath moveToPoint:CGPointMake(self.frame.size.width/2, self.frame.size.height)];
     // 其他点
-    [linePath addLineToPoint:CGPointMake(self.frame.size.height/2, 0)];
+    [linePath addLineToPoint:CGPointMake(self.frame.size.width/2, 0)];
     
     layer.lineWidth = lineWidth;
     layer.path = linePath.CGPath;

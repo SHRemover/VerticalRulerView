@@ -46,10 +46,15 @@
 
 - (void)configWithFrame:(CGRect)frame
 {
-    self.loopProgressView = [[STLoopProgressView alloc] initWithFrame:(CGRectMake(0, 0, frame.size.height, frame.size.height))];
+    self.loopProgressView = [[STLoopProgressView alloc] initWithFrame:(CGRectMake(0, 0, frame.size.width, frame.size.height))];
     [self addSubview:_loopProgressView];
     
-    self.slider = [[UISlider alloc] initWithFrame:CGRectMake(0, (frame.size.height- lineWidth)/2, frame.size.height, lineWidth)];
+    CGFloat sizeW = frame.size.width;
+    CGFloat sizeH = frame.size.height;
+    CGFloat x = (sizeW-sizeH)/2;
+    CGFloat y = (sizeH-lineWidth)/2;
+    
+    self.slider = [[UISlider alloc] initWithFrame:CGRectMake(x, y, frame.size.height, lineWidth)];
     
     //设置滑块图标图片
     [_slider setThumbImage:[UIImage imageNamed:@"btn"] forState:UIControlStateNormal];

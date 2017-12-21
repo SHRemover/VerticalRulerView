@@ -10,6 +10,10 @@
 
 #import "VerticalRuler.h"
 
+@interface ViewController ()
+
+
+@end
 
 @implementation ViewController
 
@@ -17,11 +21,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    VerticalRuler *ruler = [[VerticalRuler alloc] initWithFrame:(CGRectMake(50, 100, 200, 200))];
+    VerticalRuler *ruler = [[VerticalRuler alloc] initWithFrame:(CGRectMake(50, 100, 20, 300))];
+
     ruler.valueChanged = ^(CGFloat value, CGFloat persentageValue) {
         NSLog(@"value:%f == persentageValue:%f", value, persentageValue);
     };
-    
     [self.view addSubview:ruler];
 }
 
