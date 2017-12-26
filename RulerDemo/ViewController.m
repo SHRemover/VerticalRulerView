@@ -10,6 +10,8 @@
 
 #import "VerticalRuler.h"
 
+#import "HorizontalRuler.h"
+
 @interface ViewController ()
 
 
@@ -27,6 +29,14 @@
         NSLog(@"value:%f == persentageValue:%f", value, persentageValue);
     };
     [self.view addSubview:ruler];
+    
+    
+    HorizontalRuler *horRuler = [[HorizontalRuler alloc] initWithFrame:(CGRectMake(50, 450, 300, 10))];
+    horRuler.valueChanged = ^(CGFloat value, CGFloat persentageValue) {
+        NSLog(@"value:%f == persentageValue:%f", value, persentageValue);
+    };
+    [self.view addSubview:horRuler];
+    
 }
 
 - (void)addProgressView{

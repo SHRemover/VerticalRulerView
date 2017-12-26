@@ -15,6 +15,8 @@
 		443D61DB1FE7A07B003CFE1D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 443D61DA1FE7A07B003CFE1D /* main.m */; };
 		4492FB841FE8B0650019738E /* STLoopProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4492FB811FE8B0650019738E /* STLoopProgressView.m */; };
 		4492FB851FE8B0650019738E /* VerticalRuler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4492FB831FE8B0650019738E /* VerticalRuler.m */; };
+		449385821FF22B7E003F570D /* HorizontalProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 449385811FF22B7E003F570D /* HorizontalProgressView.m */; };
+		449385851FF22B8D003F570D /* HorizontalRuler.m in Sources */ = {isa = PBXBuildFile; fileRef = 449385841FF22B8D003F570D /* HorizontalRuler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,10 @@
 		4492FB811FE8B0650019738E /* STLoopProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STLoopProgressView.m; sourceTree = "<group>"; };
 		4492FB821FE8B0650019738E /* VerticalRuler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalRuler.h; sourceTree = "<group>"; };
 		4492FB831FE8B0650019738E /* VerticalRuler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalRuler.m; sourceTree = "<group>"; };
+		449385801FF22B7E003F570D /* HorizontalProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HorizontalProgressView.h; sourceTree = "<group>"; };
+		449385811FF22B7E003F570D /* HorizontalProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HorizontalProgressView.m; sourceTree = "<group>"; };
+		449385831FF22B8D003F570D /* HorizontalRuler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HorizontalRuler.h; sourceTree = "<group>"; };
+		449385841FF22B8D003F570D /* HorizontalRuler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HorizontalRuler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,7 @@
 		443D61CA1FE7A07B003CFE1D /* RulerDemo */ = {
 			isa = PBXGroup;
 			children = (
+				4493857F1FF22B03003F570D /* HorizontalRulerView */,
 				4492FB7F1FE8B0650019738E /* VerticalRulerView */,
 				443D61CB1FE7A07B003CFE1D /* AppDelegate.h */,
 				443D61CC1FE7A07B003CFE1D /* AppDelegate.m */,
@@ -87,6 +94,17 @@
 				4492FB831FE8B0650019738E /* VerticalRuler.m */,
 			);
 			path = VerticalRulerView;
+			sourceTree = "<group>";
+		};
+		4493857F1FF22B03003F570D /* HorizontalRulerView */ = {
+			isa = PBXGroup;
+			children = (
+				449385801FF22B7E003F570D /* HorizontalProgressView.h */,
+				449385811FF22B7E003F570D /* HorizontalProgressView.m */,
+				449385831FF22B8D003F570D /* HorizontalRuler.h */,
+				449385841FF22B8D003F570D /* HorizontalRuler.m */,
+			);
+			path = HorizontalRulerView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +181,8 @@
 				4492FB841FE8B0650019738E /* STLoopProgressView.m in Sources */,
 				443D61D01FE7A07B003CFE1D /* ViewController.m in Sources */,
 				443D61DB1FE7A07B003CFE1D /* main.m in Sources */,
+				449385821FF22B7E003F570D /* HorizontalProgressView.m in Sources */,
+				449385851FF22B8D003F570D /* HorizontalRuler.m in Sources */,
 				443D61CD1FE7A07B003CFE1D /* AppDelegate.m in Sources */,
 				4492FB851FE8B0650019738E /* VerticalRuler.m in Sources */,
 			);
