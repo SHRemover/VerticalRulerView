@@ -13,6 +13,7 @@
 		443D61D51FE7A07B003CFE1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 443D61D41FE7A07B003CFE1D /* Assets.xcassets */; };
 		443D61D81FE7A07B003CFE1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 443D61D61FE7A07B003CFE1D /* LaunchScreen.storyboard */; };
 		443D61DB1FE7A07B003CFE1D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 443D61DA1FE7A07B003CFE1D /* main.m */; };
+		445537641FF32C2000FF656D /* SettingHorRulerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 445537631FF32C2000FF656D /* SettingHorRulerView.m */; };
 		4492FB841FE8B0650019738E /* STLoopProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4492FB811FE8B0650019738E /* STLoopProgressView.m */; };
 		4492FB851FE8B0650019738E /* VerticalRuler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4492FB831FE8B0650019738E /* VerticalRuler.m */; };
 		449385821FF22B7E003F570D /* HorizontalProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 449385811FF22B7E003F570D /* HorizontalProgressView.m */; };
@@ -43,6 +44,8 @@
 		443D61D71FE7A07B003CFE1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		443D61D91FE7A07B003CFE1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		443D61DA1FE7A07B003CFE1D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		445537621FF32C2000FF656D /* SettingHorRulerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingHorRulerView.h; sourceTree = "<group>"; };
+		445537631FF32C2000FF656D /* SettingHorRulerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingHorRulerView.m; sourceTree = "<group>"; };
 		4492FB801FE8B0650019738E /* STLoopProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STLoopProgressView.h; sourceTree = "<group>"; };
 		4492FB811FE8B0650019738E /* STLoopProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STLoopProgressView.m; sourceTree = "<group>"; };
 		4492FB821FE8B0650019738E /* VerticalRuler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalRuler.h; sourceTree = "<group>"; };
@@ -118,6 +121,8 @@
 				443D61CC1FE7A07B003CFE1D /* AppDelegate.m */,
 				443D61CE1FE7A07B003CFE1D /* ViewController.h */,
 				443D61CF1FE7A07B003CFE1D /* ViewController.m */,
+				445537621FF32C2000FF656D /* SettingHorRulerView.h */,
+				445537631FF32C2000FF656D /* SettingHorRulerView.m */,
 				449385941FF23775003F570D /* Masonry */,
 				443D61D11FE7A07B003CFE1D /* Main.storyboard */,
 				443D61D41FE7A07B003CFE1D /* Assets.xcassets */,
@@ -282,6 +287,7 @@
 				4492FB851FE8B0650019738E /* VerticalRuler.m in Sources */,
 				449385B41FF23775003F570D /* MASConstraintMaker.m in Sources */,
 				449385BB1FF23775003F570D /* ViewController+MASAdditions.m in Sources */,
+				445537641FF32C2000FF656D /* SettingHorRulerView.m in Sources */,
 				449385B71FF23775003F570D /* MASViewConstraint.m in Sources */,
 				449385931FF23461003F570D /* HorizontalRulerView.m in Sources */,
 				449385B61FF23775003F570D /* MASViewAttribute.m in Sources */,

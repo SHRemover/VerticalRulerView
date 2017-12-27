@@ -22,6 +22,7 @@
 }
 @property (retain, nonatomic) UILabel *titleLab;
 @property (retain, nonatomic) UILabel *valueLab;
+@property (retain, nonatomic) UILabel *valueUnitLab;
 @property (retain, nonatomic) UILabel *minLab;
 @property (retain, nonatomic) UILabel *maxLab;
 @property (retain, nonatomic) UIView *horRulerBacView;
@@ -56,8 +57,9 @@
     _titleLab.text = titleStr;
     _titleLab.font = [UIFont boldSystemFontOfSize:18.0];
     self.valueLab = [[UILabel alloc] init];
-    _valueLab.font = [UIFont systemFontOfSize:18.0];
-    _valueLab.textColor = [UIColor orangeColor];
+    self.valueUnitLab = [[UILabel alloc] init];
+    _valueLab.font = _valueUnitLab.font = [UIFont systemFontOfSize:18.0];
+    _valueLab.textColor = _valueUnitLab.textColor = [UIColor orangeColor];
     self.horRulerBacView = [[UIView alloc] init];
     self.minLab = [[UILabel alloc] init];
     self.maxLab = [[UILabel alloc] init];
@@ -66,6 +68,7 @@
     
     [self addSubview:_titleLab];
     [self addSubview:_valueLab];
+    [self addSubview:_valueUnitLab];
     [self addSubview:_horRulerBacView];
     [self addSubview:_minLab];
     [self addSubview:_maxLab];
@@ -76,6 +79,10 @@
     [_valueLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_titleLab);
         make.left.equalTo(_titleLab.mas_right).offset(10);
+    }];
+    [_valueUnitLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(_valueLab);
+        make.left.equalTo(_valueLab.mas_right);
     }];
     [_horRulerBacView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_titleLab.mas_bottom).offset(margin);
@@ -138,6 +145,7 @@
 
 - (void)setRulerUnitStr:(NSString *)rulerUnitStr {
     unitStr = rulerUnitStr;
+    _valueUnitLab.text = unitStr;
 }
 
 
